@@ -12,6 +12,8 @@
     
 </head>
 <body>
+    
+
     <div class="container">
         <div class="featured-header">
             <h2>Tech Events</h2>
@@ -20,6 +22,7 @@
                 <div class="nav-button swiper-button-next-custom">→</div>
             </div>
         </div>
+
         
         <!-- Swiper Container -->
         <div class="swiper">
@@ -112,11 +115,19 @@
             </div>
         </div>
     </div>
+    <div id="particles-js"></div>
 
+    <!--Particles.js-->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
     <!-- Swiper.js Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    
     <script src="events.js"></script>
-
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+    </script>    
 </body>
 </html>
