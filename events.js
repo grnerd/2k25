@@ -1,25 +1,20 @@
 /*
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure Swiper.js is loaded
     if (typeof Swiper === "undefined") {
         console.error("Swiper.js is not loaded. Make sure the Swiper script is included in your HTML.");
         return;
     }
 
-    // Initialize Swiper
     var swiper = new Swiper(".swiper", {
-        slidesPerView: 1,
+        slidesPerView: 3, // Ensure 3 cards are visible at a time
         spaceBetween: 30,
         loop: true,
-        centeredSlides: true,
+        centeredSlides: false, // Ensure all 3 slides are interactive
         grabCursor: true,
-        effect: "coverflow",
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
+        effect: "slide", // Removed coverflow effect to make all slides functional
+        navigation: {
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
         },
         breakpoints: {
             640: {
@@ -29,16 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 slidesPerView: 2,
             },
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 3, // 3 slides at larger screen widths
             },
         },
-        navigation: {
-            nextEl: ".swiper-button-next-custom",
-            prevEl: ".swiper-button-prev-custom",
-        }
     });
+    tsParticles.load("particles-js", {
+    particles: { number: { value: 100 }, move: { speed: 2 } }
+  });
 
-    // Custom navigation buttons (Check if they exist)
     const prevButton = document.querySelector(".swiper-button-prev-custom");
     const nextButton = document.querySelector(".swiper-button-next-custom");
 
@@ -53,8 +46,18 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.warn("Navigation buttons not found. Make sure .swiper-button-prev-custom and .swiper-button-next-custom exist.");
     }
+});*/
+
+
+/*document.addEventListener("DOMContentLoaded", function () {
+    tsParticles.load("particles-js", {
+        particles: { 
+            number: { value: 100 }, 
+            move: { speed: 2 } 
+        }
+    });
 });
-*/
+ */
 
 document.addEventListener("DOMContentLoaded", function () {
     if (typeof Swiper === "undefined") {
@@ -85,6 +88,19 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         },
     });
+
+    // Load Particles.js
+    tsParticles.load({
+        id: "tsparticles",
+        options: {
+          particles: {
+            shape: {
+              type: "square", // starting from v2, this require the square shape script
+            },
+          },
+          preset: "links",
+        },
+      });
 
     const prevButton = document.querySelector(".swiper-button-prev-custom");
     const nextButton = document.querySelector(".swiper-button-next-custom");
