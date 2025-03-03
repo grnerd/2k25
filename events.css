@@ -1,9 +1,21 @@
+ 
+
 body {
     font-family: Arial, sans-serif;
     background: #fef6f0;
     margin: 0;
     padding: 20px;
 }
+#particles-js {
+    position: fixed;  /* Fixed position so it covers the entire screen */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Keeps particles in the background */
+    background: #0d1b2a; /* Dark background for better visibility */
+}
+ 
 
 .container {
     max-width: 1200px;
@@ -11,6 +23,7 @@ body {
 }
 
 .featured-header {
+    font: 700 1.5rem 'Montserrat', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +32,7 @@ body {
 
 .featured-header h2 {
     font-size: 28px;
-    color: #1a1a2e;
+    color: #ebebef;
     margin: 0;
 }
 
